@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-RUN apk --update add bind
+RUN addgroup -S -g 18345 named && adduser -D -H -G named -u 18345 kibana && apk --update add bind
 
 EXPOSE 53
 
